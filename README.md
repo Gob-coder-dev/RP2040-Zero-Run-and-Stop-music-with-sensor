@@ -9,6 +9,13 @@ The Pico emulates a multimedia Play/Pause key via HID Consumer Control.
 - One sensor (e.g., IR presence sensor)
 - One Usb-C cable
 
+## Flash CircuitPython + libraries (first-time setup)
+1. Unplug the board. Hold the **BOOT**/**BOOTSEL** button while connecting USB; a `RPI-RP2` drive appears.
+2. Copy `adafruit-circuitpython-waveshare_rp2040_zero-fr-10.0.3.uf2` to `RPI-RP2`; the board reboots as a `CIRCUITPY` drive.
+3. Copy `code.py` and `boot.py` to the root of `CIRCUITPY`.
+4. Create `CIRCUITPY/lib` (if missing) and copy the `lib/adafruit_hid` folder there (the only external dependency used by `code.py`).
+5. Eject the drive; the Pico is now ready to wire and test.
+
 ## Wiring
 - `GP7` with internal pull-up: connect your sensor output so it pulls the pin low to trigger Play/Pause (e.g., IR presence sensor OUT pin).
 - `GP15` (boot.py): tie to 3V3 when plugging in if you want to keep the USB drive mounted. Leaving it floating or to ground disables storage.

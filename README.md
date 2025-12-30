@@ -8,6 +8,7 @@ The Pico emulates a multimedia Play/Pause key via HID Consumer Control.
 - 3 jumper wires
 - One sensor (e.g., IR presence sensor)
 - One Usb-C cable
+![base_image](https://github.com/user-attachments/assets/0359f5d5-0bb3-450b-bb21-cfeb137caf0b)
 
 ## Flash CircuitPython + libraries (first-time setup)
 1. Unplug the board. Hold the **BOOT**/**BOOTSEL** button while connecting USB; a `RPI-RP2` drive appears.
@@ -33,6 +34,12 @@ The Pico emulates a multimedia Play/Pause key via HID Consumer Control.
 ## Boot (boot.py)
 - `GP15` is an input with pull-down.
 - If `GP15` is not high on startup, `storage.disable_usb_drive()` turns off the USB drive.
+
+USB drive off and program running :
+![cable_location_running](https://github.com/user-attachments/assets/5ecf06bb-7a3f-41c0-a3d1-6693df7056a0)
+
+USB drive on and program disabled :
+![cable_location_debbug](https://github.com/user-attachments/assets/f64b90ba-2a3b-41fd-9a6c-356e74fb9694)
 
 ## Usage
 1. Hook up your sensor: OUT to `GP7`, VCC to 3V3 (or 5V), GND to GND.
